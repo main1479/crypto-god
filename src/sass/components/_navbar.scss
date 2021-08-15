@@ -1,0 +1,145 @@
+.nav {
+	padding: 2.5rem 0;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 0;
+	z-index: 3;
+	transition: all 0.5s;
+
+	&.sticky {
+		position: fixed;
+		background: rgba($color-bg-primary, 0.9);
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+
+		&__item {
+			&:not(:last-child) {
+				margin-right: 4rem;
+			}
+		}
+
+		&__link {
+			&:link,
+			&:visited {
+				color: $color-text;
+			}
+		}
+	}
+
+	@media only screen and (max-width: $tab-port) {
+		.menu {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100%;
+			max-width: 30rem;
+			background: rgba($color-bg-primary, 0.9);
+			height: 100vh;
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			padding-top: 10rem;
+			padding-left: 2rem;
+			z-index: 9;
+			transition: all 0.5s;
+			transform: translateX(110%);
+
+			li {
+				margin-bottom: 3rem;
+			}
+			a {
+				font-size: 2rem;
+			}
+		}
+
+		&.active {
+			.menu {
+				transform: translateX(0);
+			}
+		}
+	}
+}
+
+.nav__button {
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background: $color-bg-primary;
+	border: 2px solid $color-text;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	cursor: pointer;
+	span {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 20px;
+		height: 2px;
+		background: #fff;
+		border-radius: 100rem;
+		transition: all 0.3s;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			background: $color-text;
+			border-radius: 100rem;
+			right: 0;
+			transition: all 0.3s;
+		}
+		&::before {
+			width: 12px;
+			top: -8px;
+		}
+		&::after {
+			width: 17px;
+			top: 8px;
+		}
+	}
+	&:hover {
+		span {
+			&::after,
+			&::before {
+				width: 100%;
+			}
+		}
+	}
+
+	&.active {
+		position: fixed;
+		top: 2.9rem;
+		right: 3.8rem;
+		span {
+			background: transparent;
+
+			&::before {
+				width: 100%;
+				top: 0;
+				transform: rotate(135deg);
+			}
+			&::after {
+				width: 100%;
+				top: 0;
+				transform: rotate(-135deg);
+			}
+		}
+	}
+}

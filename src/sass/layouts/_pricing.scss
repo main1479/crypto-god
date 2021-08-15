@@ -1,0 +1,14 @@
+.pricing {
+	padding-bottom: 20rem;
+	position: relative;
+	.card {
+		margin-bottom: 3rem;
+	}
+	&-bg {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+	}
+}

@@ -1,0 +1,42 @@
+.footer {
+	padding: 8rem 0;
+	@media only screen and (max-width: $tab-port) {
+		padding-bottom: 4rem;
+	}
+
+	.social__links {
+		display: flex;
+		align-items: center;
+
+		li {
+			&:not(:last-child) {
+				margin-right: 2.8rem;
+			}
+
+			a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 4rem;
+				height: 4rem;
+				border-radius: 8px;
+				background: $color-primary;
+				transition: all 0.3s;
+				svg {
+					transition: all 0.3s;
+					width: 2rem;
+					height: 2rem;
+					fill: $color-text;
+				}
+
+				&:hover {
+					background: $color-text;
+
+					svg {
+						fill: $color-primary;
+					}
+				}
+			}
+		}
+	}
+}

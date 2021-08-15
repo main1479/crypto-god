@@ -1,0 +1,40 @@
+.header {
+	position: relative;
+	padding-bottom: 10rem;
+
+	.slot__box {
+		display: flex;
+		align-items: center;
+		@media only screen and (max-width: $tab-port) {
+			justify-content: center;
+		}
+
+		h5 {
+			margin-right: 2rem;
+			font-size: 2rem;
+			margin-bottom: 0;
+		}
+
+		span {
+			padding: 1.7rem;
+			background: $color-primary;
+			max-height: 4.7rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 10px;
+			color: $color-text;
+			font-size: 2rem;
+		}
+	}
+
+	&-bg {
+		position: absolute;
+		top: -33rem;
+		left: 0;
+		z-index: -1;
+		// height: 220%;
+		width: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,0 +1,36 @@
+.pricing__card {
+	background: $color-bg-primary;
+	padding: 4rem;
+	border-radius: 2rem;
+	transition: all 0.3s;
+	border: 3px solid transparent;
+	display: flex;
+	flex-direction: column;
+	min-height: 58rem;
+
+	&-price--now {
+		font-size: 4rem;
+		color: $color-secondary;
+		font-weight: bold;
+		line-height: 1.6;
+		font-family: $font-primary;
+		@media only screen and (max-width: $tab-port) {
+			font-size: 3rem;
+		}
+	}
+	&__price-old {
+		font-size: 2rem;
+		font-family: $font-primary;
+		color: $color-text;
+		text-decoration: line-through;
+		font-weight: 500;
+	}
+
+	a.btn {
+		margin-top: auto;
+	}
+
+	&:hover {
+		border-color: #9679f2;
+	}
+}

@@ -1,0 +1,75 @@
+.btn {
+	&,
+	&:link,
+	&:visited {
+		color: $color-text;
+		font-size: 1.6rem;
+		font-weight: 500;
+		border-radius: 1rem;
+		@media only screen and (max-width: $tab-port) {
+			font-size: 14px;
+		}
+	}
+	padding: 1.2rem 2.5rem;
+
+	&__outlined {
+		background: none;
+		border: 2px solid currentColor;
+
+		&:hover {
+			background: $color-primary;
+			border-color: $color-primary;
+		}
+	}
+
+	&__primary {
+		background: $color-primary;
+		border: 2px solid $color-primary;
+		padding: 1.2rem 8rem;
+		&:hover {
+			background: none;
+			border-color: currentColor;
+		}
+
+		&--small {
+			padding: 1.2rem 2.5rem;
+		}
+	}
+	&__secondary {
+		background: $color-secondary;
+		border: 2px solid $color-secondary;
+		padding: 1.2rem 4rem;
+		color: $color-bg-primary !important;
+		&:hover {
+			background: none;
+			color: $color-text !important;
+			border-color: currentColor;
+		}
+	}
+
+	&__dark {
+		background: #26264f;
+		display: flex;
+		align-items: center;
+		padding: 1.2rem 2.5rem;
+		border: 2px solid #26264f;
+		i {
+			width: 2rem;
+			height: 2rem;
+			background: #fff;
+			color: #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50%;
+			padding-left: 2px;
+			margin-right: 1rem;
+			font-size: 1rem;
+		}
+	}
+
+	&-full {
+		display: block;
+		width: 100%;
+	}
+}
